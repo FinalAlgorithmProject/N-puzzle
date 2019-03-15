@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		08002BFF223546DF006504F1 /* Generator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08002BFE223546DF006504F1 /* Generator.swift */; };
 		0881DF8E22356A08005B3F2A /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0881DF8D22356A08005B3F2A /* String.swift */; };
+		1FD2F943223BF2DB00057E29 /* ArgumentParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FD2F942223BF2DB00057E29 /* ArgumentParser.swift */; };
 		29859B602221D6EF0092F096 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29859B5F2221D6EF0092F096 /* AppDelegate.swift */; };
 		29859B622221D6EF0092F096 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29859B612221D6EF0092F096 /* GameViewController.swift */; };
 		29859B652221D6EF0092F096 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29859B632221D6EF0092F096 /* Main.storyboard */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		08002BFE223546DF006504F1 /* Generator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Generator.swift; sourceTree = "<group>"; };
 		0881DF8D22356A08005B3F2A /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		1FD2F942223BF2DB00057E29 /* ArgumentParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentParser.swift; sourceTree = "<group>"; };
 		29859B5C2221D6EF0092F096 /* N-puzzle.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "N-puzzle.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		29859B5F2221D6EF0092F096 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29859B612221D6EF0092F096 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 			isa = PBXGroup;
 			children = (
 				08002BFE223546DF006504F1 /* Generator.swift */,
+				1FD2F942223BF2DB00057E29 /* ArgumentParser.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -186,6 +189,7 @@
 				29859B622221D6EF0092F096 /* GameViewController.swift in Sources */,
 				0881DF8E22356A08005B3F2A /* String.swift in Sources */,
 				29859B602221D6EF0092F096 /* AppDelegate.swift in Sources */,
+				1FD2F943223BF2DB00057E29 /* ArgumentParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,8 +325,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
