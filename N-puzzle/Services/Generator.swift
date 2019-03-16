@@ -8,42 +8,9 @@
 
 import Foundation
 
-/* Arguments:
- - size
- - solvable/unsolvable
- - iterations
- */
-
-enum Solvability {
-    case solvable
-    case unsolvable
-    
-    func options() -> [Solvability] {
-        return [.solvable, .unsolvable]
-    }
-    
-    func randomOption() -> Solvability {
-        let options = self.options()
-        let randomIndex = Int(arc4random_uniform(UInt32(options.count)))
-        
-        return options[randomIndex]
-    }
-}
-
-enum Arguments: String {
-    case solvable = "-s"
-    case unsolvable = "-u"
-    case iterations = "-i"
-    case size = "size"
-    
-    func getAll() -> [Arguments] {
-        return [.solvable, .unsolvable, .iterations, .size]
-    }
-}
-
 final class Generator {
-
-    var solvability: Solvability? = nil
+    
+    var solvability: Solvability = .solvable
     var iterations = 10000
     var size = 3
     
@@ -78,10 +45,25 @@ final class Generator {
         return puzzle
     }
     
-    func basicInput() {
-        print("Please enter parameters: [-s] - \"Forces generation of a solvable puzzle. Overrides -u.\"\n[-u] - \"Forces generation of an unsolvable puzzle\"\n[-i ITERATIONS] - \"Number of passes\"\nsize - \"Size of the puzzle's side. Must be >3.\"\n")
-        if let readLine = readLine() {
+    func generateCustomPuzzle() {
+        ArgumentParser().obtainCustomArguments { [weak self] (customSize, customIterations, customSolvability) in
+            guard let self = self else { return }
             
+            if let customSize = customSize,
+                let customIterations = customIterations,
+                let customSolvability = customSolvability {
+                
+                self.solvability = customSolvability
+                self.iterations = customIterations
+                self.size = customSize
+                
+                //
+                let solvabilityName = self.solvability == .solvable ? "solvable" : "unsolvable"
+                print("This puzzle is \(self.size)✗\(self.size) \(solvabilityName)")
+            } else {
+                print("Exit 🕳")
+            }
         }
+        
     }
 }
